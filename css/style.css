@@ -157,15 +157,17 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(255, 0, 0, 0.8); /* Red background similar to Pomofocus */
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    color: white;
 }
 
 #tasks-container h2 {
     margin: 0;
-    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
 #tasks-list {
@@ -173,6 +175,10 @@ body {
     text-align: left;
     max-height: 200px;
     overflow-y: auto;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
 }
 
 .task {
@@ -191,42 +197,36 @@ body {
     background: #d3d3d3;
 }
 
-#new-task-input {
-    width: calc(100% - 110px);
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
+#new-task-container {
+    display: flex;
+    justify-content: center;
     margin-top: 10px;
 }
 
-#add-task-button {
-    width: 100px;
+#new-task-input {
+    flex: 1;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+}
+
+#add-task-button {
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
     border: none;
     background: green;
     color: white;
     cursor: pointer;
+}
+
+#task-summary {
     margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
-
-.complete-button, .delete-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-left: 10px;
-    padding: 5px 10px;
-    border-radius: 5px;
+#task-summary span {
+    font-size: 16px;
 }
 
-.complete-button {
-    background: #32cd32;
-    color: white;
-}
-
-.delete-button {
-    background: red;
-    color: white;
-}
 

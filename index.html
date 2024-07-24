@@ -26,8 +26,14 @@
     <div id="tasks-container">
         <h2>Tasks</h2>
         <div id="tasks-list"></div>
-        <input type="text" id="new-task-input" placeholder="Add a new task..." />
-        <button id="add-task-button">Add Task</button>
+        <div id="new-task-container">
+            <input type="text" id="new-task-input" placeholder="Add a new task..." />
+            <button id="add-task-button">+</button>
+        </div>
+        <div id="task-summary">
+            <span id="pomos-count">Pomos: 0/0</span>
+            <span id="finish-time">Finish At: --:-- (--h)</span>
+        </div>
     </div>
 
     <script src="js/main.js" type="module"></script>

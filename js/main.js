@@ -39,6 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
             addTask();
         }
     });
+
+    updateTaskSummary(); // Mettre à jour le résumé des tâches au chargement
 });
 
 function addTask() {
@@ -55,21 +57,44 @@ function addTask() {
     taskItem.appendChild(taskLabel);
 
     const completeButton = document.createElement('button');
-    completeButton.textContent = 'Complete';
+    completeButton.textContent = '✔';
     completeButton.classList.add('complete-button');
     completeButton.addEventListener('click', () => {
         taskItem.classList.toggle('completed');
+        updateTaskSummary();
     });
     taskItem.appendChild(completeButton);
 
     const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Delete';
+    deleteButton.textContent = '❌';
     deleteButton.classList.add('delete-button');
     deleteButton.addEventListener('click', () => {
         taskList.removeChild(taskItem);
+        updateTaskSummary();
     });
     taskItem.appendChild(deleteButton);
 
     taskList.appendChild(taskItem);
     taskInput.value = '';
+    updateTaskSummary();
+}
+
+function updateTaskSummary() {
+    const tasks = document.querySelectorAll('.task');
+    const completedTasks = document.querySelectorAll('.task.completed');
+    const pomosCount = document.getElementById('pomos-count');
+    const finishTime = document.getElementById('finish-time');
+
+    const pomos = tasks.length;
+    const completedPomos = completedTasks.length;
+    const remainingPomos = pomos - completedPomos;
+
+    pomosCount.textContent = `Pomos: ${completedPomos}/${pomos}`;
+
+    const currentTime = new Date();
+    currentTime.setMinutes(currentTime.getMinutes() + (remainingPomos * 25));
+    const finishAt = currentTime.toTimeString().split(' ')[0];
+    const remainingHours = (remainingPomos * 25) / 60;
+
+    finishTime.textContent = `Finish At: ${finishAt} (${remainingHours.toFixed(1)}h)`;
 }
