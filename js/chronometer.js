@@ -6,6 +6,7 @@ let minutes = 0;
 let seconds = 0;
 let range = 60; // Default range in minutes
 let interval = null;
+let soundFrequency = 1; // Default frequency in minutes
 
 export function initChronometer() {
     console.log('Initializing chronometer'); // Message de débogage
@@ -21,7 +22,9 @@ export function incrementTime() {
             minutes++;
             changeColor();
             updateProgressBarMarkers(range);
-            playSound();
+            if (minutes % soundFrequency === 0) {
+                playSound();
+            }
         }
         updateTimeDisplay(minutes, seconds);
         updateProgressBar(minutes, range);
@@ -47,4 +50,8 @@ export function startChronometer() {
     if (!interval) {
         interval = setInterval(incrementTime, 1000);
     }
+}
+
+export function setSoundFrequency(frequency) {
+    soundFrequency = frequency;
 }
