@@ -1,9 +1,15 @@
-import { setRange } from './chronometer.js';
+import { setRange, setSoundFrequency } from './chronometer.js';
 
 export function initSettings() {
     document.getElementById('range-input').addEventListener('change', function() {
         const range = parseInt(this.value, 10);
         setRange(range);
+        document.getElementById('settings-block').style.display = 'none';
+    });
+
+    document.getElementById('sound-frequency-input').addEventListener('change', function() {
+        const frequency = parseInt(this.value, 10);
+        setSoundFrequency(frequency);
         document.getElementById('settings-block').style.display = 'none';
     });
 
