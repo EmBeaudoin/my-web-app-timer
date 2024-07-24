@@ -5,7 +5,7 @@ import { playSound } from './sounds.js';
 let minutes = 0;
 let seconds = 0;
 let range = 60; // Default range in minutes
-let soundFrequency = 1; // Default frequency in minutes
+let interval = null;
 
 export function initChronometer() {
     console.log('Initializing chronometer'); // Message de débogage
@@ -15,17 +15,22 @@ export function initChronometer() {
 }
 
 export function incrementTime() {
-    seconds++;
-    if (seconds % 60 === 0) {
-        minutes++;
-        changeColor();
-        updateProgressBarMarkers(range);
-        if (minutes % soundFrequency === 0) {
-            playSound(); // Jouer le son en fonction de la fréquence définie
+    if (interval) {
+        seconds++;
+        if (seconds % 60 === 0) {
+            minutes++;
+            changeColor();
+            updateProgressBarMarkers(range);
+            playSound();
+        }
+        updateTimeDisplay(minutes, seconds);
+        updateProgressBar(minutes, range);
+
+        // Arrêter le chronomètre si la range est atteinte
+        if (minutes >= range) {
+            stopChronometer();
         }
     }
-    updateTimeDisplay(minutes, seconds);
-    updateProgressBar(minutes, range);
 }
 
 export function setRange(newRange) {
@@ -33,6 +38,13 @@ export function setRange(newRange) {
     updateProgressBarMarkers(range);
 }
 
-export function setSoundFrequency(newFrequency) {
-    soundFrequency = newFrequency;
+export function stopChronometer() {
+    clearInterval(interval);
+    interval = null;
+}
+
+export function startChronometer() {
+    if (!interval) {
+        interval = setInterval(incrementTime, 1000);
+    }
 }

@@ -100,3 +100,50 @@ body {
         opacity: 0;
     }
 }
+
+#pomodoro-button {
+    position: absolute;
+    top: 10px;
+    right: 70px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.pomodoro-on {
+    background: green;
+}
+
+.pomodoro-off {
+    background: red;
+}
+
+#stop-button, #start-button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px;
+}
+
+#stop-button {
+    background: red;
+    color: white;
+}
+
+#start-button {
+    background: green;
+    color: white;
+}
