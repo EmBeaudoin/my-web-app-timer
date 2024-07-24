@@ -103,8 +103,8 @@ body {
 
 #pomodoro-button {
     position: absolute;
-    top: 10px;
-    right: 70px;
+    top: 20px;
+    right: 20px;
     background: red;
     color: white;
     border: none;
@@ -126,7 +126,7 @@ body {
 
 #stop-button, #start-button {
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     background: white;
@@ -139,11 +139,14 @@ body {
 }
 
 #stop-button {
+    left: calc(50% - 60px); /* Ajuster la position pour éviter le chevauchement */
     background: red;
     color: white;
 }
 
 #start-button {
+    left: calc(50% + 60px); /* Ajuster la position pour éviter le chevauchement */
     background: green;
     color: white;
 }
+
