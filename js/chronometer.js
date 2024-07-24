@@ -1,5 +1,5 @@
-import { updateTimeDisplay, updateProgressBar, changeColor } from './utils.js';
-import { updateProgressBarMarkers } from './progress-bar.js';
+import { updateTimeDisplay, changeColor } from './utils.js';
+import { updateProgressBar, updateProgressBarMarkers } from './progress-bar.js';
 
 let minutes = 0;
 let seconds = 0;
