@@ -104,7 +104,7 @@ body {
 #pomodoro-button {
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 100px; /* Ajuster la position pour éviter la superposition avec le bouton Settings */
     background: red;
     color: white;
     border: none;
@@ -114,6 +114,7 @@ body {
     height: 40px;
     text-align: center;
     line-height: 40px;
+    z-index: 10; /* S'assurer que le bouton est au-dessus des autres éléments */
 }
 
 .pomodoro-on {
