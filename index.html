@@ -13,7 +13,7 @@
         <input type="number" id="range-input" placeholder="Enter range in minutes" />
         <input type="number" id="sound-frequency-input" placeholder="Sound frequency in minutes" />
     </div>
-    <div id="pomodoro-button" class="pomodoro-off"></div> <!-- Bouton Pomodoro -->
+    <div id="pomodoro-button" class="pomodoro-off"></div>
     <div id="time-display">00:00</div>
     <div id="progress-container">
         <div id="progress-bar"></div>
@@ -21,6 +21,15 @@
     <div id="bubbles"></div>
     <button id="stop-button">Stop</button>
     <button id="start-button">Start</button>
+
+    <!-- Bloc Tasks -->
+    <div id="tasks-container">
+        <h2>Tasks</h2>
+        <div id="tasks-list"></div>
+        <input type="text" id="new-task-input" placeholder="Add a new task..." />
+        <button id="add-task-button">Add Task</button>
+    </div>
+
     <script src="js/main.js" type="module"></script>
 </body>
 </html>

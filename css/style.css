@@ -151,3 +151,82 @@ body {
     color: white;
 }
 
+#tasks-container {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#tasks-container h2 {
+    margin: 0;
+    color: white;
+}
+
+#tasks-list {
+    margin-top: 10px;
+    text-align: left;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    color: black;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.task.completed {
+    text-decoration: line-through;
+    background: #d3d3d3;
+}
+
+#new-task-input {
+    width: calc(100% - 110px);
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+}
+
+#add-task-button {
+    width: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: green;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+.complete-button, .delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.complete-button {
+    background: #32cd32;
+    color: white;
+}
+
+.delete-button {
+    background: red;
+    color: white;
+}
+
