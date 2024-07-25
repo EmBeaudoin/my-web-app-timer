@@ -191,14 +191,16 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, 0); /* Garder le bloc au milieu de la page */
     width: 80%;
-    background: rgba(0, 0, 0, 0.5); /* Noir avec transparence */
+    background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     color: white;
-    transition: height 0.3s ease;
+    transition: max-height 0.3s ease; /* Ajouter une transition pour le changement de hauteur */
+    max-height: 200px; /* Initialiser la hauteur maximale */
+    overflow-y: auto; /* Activer le défilement vertical */
 }
 
 #tasks-container h2 {
