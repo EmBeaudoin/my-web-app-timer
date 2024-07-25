@@ -41,6 +41,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     updateTaskSummary(); // Mettre à jour le résumé des tâches au chargement
+
+    // Initialiser la bibliothèque de drag and drop
+    const tasksList = document.getElementById('tasks-list');
+    new Sortable(tasksList, {
+        animation: 150,
+        onEnd: () => {
+            updateTaskSummary();
+        }
+    });
 });
 
 function addTask() {
@@ -51,6 +60,7 @@ function addTask() {
     const taskList = document.getElementById('tasks-list');
     const taskItem = document.createElement('div');
     taskItem.classList.add('task');
+    taskItem.draggable = true;
 
     const taskLabel = document.createElement('span');
     taskLabel.textContent = taskText;
@@ -76,6 +86,7 @@ function addTask() {
 
     taskList.appendChild(taskItem);
     taskInput.value = '';
+    taskList.style.display = 'block'; // Afficher le bloc des tâches
     updateTaskSummary();
 }
 
@@ -97,4 +108,9 @@ function updateTaskSummary() {
     const remainingHours = (remainingPomos * 25) / 60;
 
     finishTime.textContent = `Finish At: ${finishAt} (${remainingHours.toFixed(1)}h)`;
+
+    // Cacher le bloc des tâches si aucune tâche n'est présente
+    if (pomos === 0) {
+        document.getElementById('tasks-list').style.display = 'none';
+    }
 }
