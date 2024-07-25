@@ -1,3 +1,4 @@
+/* Styles de base */
 body {
     height: 100vh;
     margin: 0;
@@ -11,11 +12,14 @@ body {
     background-color: #333;
     transition: background-color 1s;
 }
+
+/* Chronomètre et barre de progression */
 #time-display {
     font-size: 64px;
     margin-bottom: 20px;
     z-index: 1;
 }
+
 #progress-container {
     width: 80%;
     height: 30px;
@@ -24,17 +28,22 @@ body {
     overflow: hidden;
     position: relative;
     z-index: 1;
+    margin-bottom: 20px; /* Ajouter un espace pour le bloc Quests */
 }
+
 #progress-bar {
     height: 100%;
     width: 0;
 }
+
 .progress-marker {
     position: absolute;
     top: 0;
     bottom: 0;
     width: 2px;
 }
+
+/* Paramètres */
 #settings-block {
     position: absolute;
     top: 10%;
@@ -46,10 +55,12 @@ body {
     z-index: 1;
     display: none;
 }
+
 #settings-block input {
     margin-bottom: 10px;
     padding: 5px;
 }
+
 #close-settings {
     position: absolute;
     top: 10px;
@@ -61,6 +72,7 @@ body {
     cursor: pointer;
     padding: 5px;
 }
+
 #settings-button {
     position: absolute;
     top: 10px;
@@ -71,6 +83,8 @@ body {
     cursor: pointer;
     z-index: 1;
 }
+
+/* Bubbles */
 #bubbles {
     position: absolute;
     top: 0;
@@ -80,6 +94,7 @@ body {
     z-index: 0;
     overflow: hidden;
 }
+
 .bubble {
     position: absolute;
     bottom: -50px;
@@ -90,6 +105,7 @@ body {
     filter: blur(2px);
     animation: rise var(--duration) linear infinite;
 }
+
 @keyframes rise {
     0% {
         transform: translateY(100vh) translateX(0) scale(1);
@@ -101,6 +117,7 @@ body {
     }
 }
 
+/* Boutons de contrôle */
 #pomodoro-button {
     position: absolute;
     top: 20px;
@@ -151,13 +168,14 @@ body {
     color: white;
 }
 
+/* Bloc des tâches (Quests) */
 #tasks-container {
     position: absolute;
     bottom: 80px;
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
-    background: rgba(0, 0, 0, 0.7); /* Noir avec transparence */
+    background: rgba(0, 0, 0, 0.6); /* Noir avec plus de transparence */
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -235,6 +253,3 @@ body {
 .dragging {
     opacity: 0.5;
 }
-
-
-
