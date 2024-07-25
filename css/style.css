@@ -1,11 +1,10 @@
-/* Styles de base */
 body {
     height: 100vh;
     margin: 0;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Changer de center à flex-start pour positionner les éléments en haut */
     align-items: center;
     font-family: Arial, sans-serif;
     color: white;
@@ -13,7 +12,15 @@ body {
     transition: background-color 1s;
 }
 
-/* Chronomètre et barre de progression */
+#time-progress-container {
+    position: relative;
+    top: 25vh; /* Positionner le conteneur à 25% de la hauteur de la page */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #time-display {
     font-size: 64px;
     margin-bottom: 20px;
@@ -28,7 +35,6 @@ body {
     overflow: hidden;
     position: relative;
     z-index: 1;
-    margin-bottom: 20px; /* Ajouter un espace pour le bloc Quests */
 }
 
 #progress-bar {
@@ -43,7 +49,6 @@ body {
     width: 2px;
 }
 
-/* Paramètres */
 #settings-block {
     position: absolute;
     top: 10%;
@@ -84,7 +89,6 @@ body {
     z-index: 1;
 }
 
-/* Bubbles */
 #bubbles {
     position: absolute;
     top: 0;
@@ -117,11 +121,10 @@ body {
     }
 }
 
-/* Boutons de contrôle */
 #pomodoro-button {
     position: absolute;
     top: 20px;
-    right: 100px; /* Ajuster la position pour éviter la superposition avec le bouton Settings */
+    right: 100px;
     background: red;
     color: white;
     border: none;
@@ -131,7 +134,7 @@ body {
     height: 40px;
     text-align: center;
     line-height: 40px;
-    z-index: 10; /* S'assurer que le bouton est au-dessus des autres éléments */
+    z-index: 10;
 }
 
 .pomodoro-on {
@@ -157,31 +160,29 @@ body {
 }
 
 #stop-button {
-    left: calc(50% - 60px); /* Ajuster la position pour éviter le chevauchement */
+    left: calc(50% - 60px);
     background: red;
     color: white;
 }
 
 #start-button {
-    left: calc(50% + 60px); /* Ajuster la position pour éviter le chevauchement */
+    left: calc(50% + 60px);
     background: green;
     color: white;
 }
 
-/* Bloc des tâches (Quests) */
 #tasks-container {
     position: absolute;
-    top: 55%;
+    bottom: 80px;
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
-    background: rgba(0, 0, 0, 0.6); /* Noir avec plus de transparence */
+    background: rgba(0, 0, 0, 0.8);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     color: white;
-    max-height: 40%;
-    overflow-y: auto;
+    transition: height 0.3s ease;
 }
 
 #tasks-container h2 {
@@ -199,7 +200,6 @@ body {
     padding: 10px;
     border-radius: 5px;
     color: black;
-    display: none; /* Cacher par défaut */
 }
 
 .task {
@@ -211,7 +211,7 @@ body {
     margin: 5px 0;
     padding: 10px;
     border-radius: 5px;
-    cursor: grab; /* Indique que la tâche peut être déplacée */
+    cursor: grab;
 }
 
 .task.completed {
