@@ -171,7 +171,7 @@ body {
 /* Bloc des tâches (Quests) */
 #tasks-container {
     position: absolute;
-    bottom: 80px;
+    top: 55%;
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
@@ -180,7 +180,8 @@ body {
     border-radius: 10px;
     text-align: center;
     color: white;
-    transition: height 0.3s ease;
+    max-height: 40%;
+    overflow-y: auto;
 }
 
 #tasks-container h2 {
